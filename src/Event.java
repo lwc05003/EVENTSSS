@@ -1,4 +1,4 @@
-public class Event {
+public abstract class Event {
 
     public static final double insuranceCost = 1000.00;
     public static final double tax = 0.30;
@@ -83,7 +83,5 @@ public class Event {
         return eventID + " " +  eventName + " " +  eventLocation + " " + pointOfContact + " " +  eventCost + " " + totalParticipants + " " + totalEventDays;
     }
     
-    public void calculateEventCost() {
-        this.eventCost = eventCost + (eventCost * tax) + insuranceCost;
-    }
+    
 }

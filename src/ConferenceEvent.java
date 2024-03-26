@@ -1,4 +1,4 @@
-public class ConferenceEvent extends Event {
+public class ConferenceEvent extends Event implements CaculateEventCostlnterface {
      private boolean breakfastRequired ;
      private double brefakfastCost ;
      private boolean lunchRequired ;
@@ -6,6 +6,11 @@ public class ConferenceEvent extends Event {
      private boolean dinnerRequired ;
      private double dinnerCost ;
      private double conferenceEventCost ;
+     private String eventID;
+     private String eventName;
+     private String eventLocation;
+     private String pointOfContact;
+     
 
      public ConferenceEvent(String eventID, String eventName, String eventLocation, String pointOfContact,  int totalParticipants, int totalEventDays , 
      double brefakfastCost, double lunchCost, double dinnerCost ) {
@@ -37,9 +42,7 @@ public class ConferenceEvent extends Event {
 
     @Override
     public void calculateEventCost() {
-         super.calculateEventCost();
-
-        conferenceEventCost = getEventCost() +((getBreakfastCost() + getLunchCost() + getDinnerCost())*getTotalParticipants()*getTotalEventDays());
+        
     }
 
 
