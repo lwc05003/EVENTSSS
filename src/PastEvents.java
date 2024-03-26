@@ -1,14 +1,27 @@
-public class PastEvents extends Event {
+public class PastEvents  {
 
     public static final double pastEventCost = 1000.00;
     
     private String paymentStatus;
     private boolean requiresExtension;
     private String paymentDetails;
+    public int totalParticipants ;
+    public int totalEventDays;
+    public static final double tax = 0.30;
+    public String eventID;
+    public String eventName;
+    public String eventLocation;
+    public String pointOfContact;
+    public double eventCost;
+
     
     public PastEvents(String eventID, String eventName, String eventLocation, String pointOfContact, int totalParticipants, int totalEventDays) {
-        super(eventID, eventName, eventLocation, pointOfContact, totalParticipants, totalEventDays);
-    
+        this.eventID = eventID;
+        this.eventName = eventName;
+        this.eventLocation = eventLocation;
+        this.pointOfContact = pointOfContact;
+        this.totalParticipants = totalParticipants;
+     
 }
 
     public String getPaymentStatus() {
@@ -39,9 +52,8 @@ public class PastEvents extends Event {
     public String getPaymentDetails() {
         return paymentDetails;
     }
-
-    @Override
+    
     public String toString() {
-        return "\n" + "Event ID" + getEventID() + "\n" + "Point of Contact" + getPointOfContact() + "\n" + "Total Participants" + getTotalParticipants() + "\n" + "Total Event Days" + getTotalEventDays() + "\n" + "The past event details:" + "\n" + "The payment details are follows:" + "\n" +paymentDetails;
+        return "\n" + "Event ID" + eventID+ "\n" + "Point of Contact" + pointOfContact + "\n" + "Total Participants" + totalParticipants + "\n" + "Total Event Days" + totalEventDays + "\n" + "The past event details:" + "\n" + "The payment details are follows:" + "\n" +paymentDetails;
      }
 }
